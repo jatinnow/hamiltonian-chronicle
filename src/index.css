@@ -1,96 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
+    /* Void Black Base */
+    --background: 0 0% 2%;
+    --foreground: 0 0% 95%;
+    
+    /* Cherenkov Blue - the ethereal glow of particles exceeding light speed in medium */
+    --primary: 200 100% 55%;
+    --primary-foreground: 0 0% 2%;
+    
+    /* Entropy Gold - the arrow of time, thermodynamic inevitability */
+    --secondary: 42 90% 55%;
+    --secondary-foreground: 0 0% 2%;
+    
+    /* Muted tones for academic elegance */
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 55%;
+    
+    /* Card surfaces - slightly lifted from void */
+    --card: 0 0% 5%;
+    --card-foreground: 0 0% 95%;
+    
+    /* Accent - quantum interference pattern */
+    --accent: 200 80% 45%;
+    --accent-foreground: 0 0% 98%;
+    
+    /* Destructive - Hawking radiation */
+    --destructive: 0 85% 60%;
+    --destructive-foreground: 0 0% 98%;
+    
+    /* Borders - event horizons */
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 200 100% 55%;
+    
+    /* Popover */
+    --popover: 0 0% 5%;
+    --popover-foreground: 0 0% 95%;
+    
+    /* Chart colors */
+    --chart-1: 200 100% 55%;
+    --chart-2: 42 90% 55%;
+    --chart-3: 180 60% 50%;
+    --chart-4: 280 60% 60%;
+    --chart-5: 0 0% 60%;
+    
+    /* Custom tokens for physics aesthetic */
+    --cherenkov: 200 100% 55%;
+    --cherenkov-glow: 200 100% 70%;
+    --entropy-gold: 42 90% 55%;
+    --entropy-glow: 42 100% 65%;
+    --void: 0 0% 2%;
+    --void-elevated: 0 0% 5%;
+    --lattice: 0 0% 20%;
+    
     --radius: 0.5rem;
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    
+    /* Sidebar - keeping for compatibility */
+    --sidebar-background: 0 0% 2%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 200 100% 55%;
+    --sidebar-primary-foreground: 0 0% 2%;
+    --sidebar-accent: 0 0% 12%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 0 0% 15%;
+    --sidebar-ring: 200 100% 55%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --background: 0 0% 2%;
+    --foreground: 0 0% 95%;
+    --primary: 200 100% 55%;
+    --primary-foreground: 0 0% 2%;
+    --secondary: 42 90% 55%;
+    --secondary-foreground: 0 0% 2%;
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 55%;
+    --card: 0 0% 5%;
+    --card-foreground: 0 0% 95%;
+    --accent: 200 80% 45%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 85% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 200 100% 55%;
+    --popover: 0 0% 5%;
+    --popover-foreground: 0 0% 95%;
   }
 }
 
@@ -99,7 +100,125 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+    overflow-x: hidden;
+  }
+  
+  /* Editorial typography */
+  .font-editorial {
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+  
+  .font-mono-physics {
+    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  }
+  
+  /* Physics symbols styling */
+  .physics-symbol {
+    font-family: 'Times New Roman', serif;
+    font-style: italic;
+    @apply text-primary;
+  }
+  
+  /* Cherenkov glow effects */
+  .glow-cherenkov {
+    text-shadow: 0 0 20px hsl(200, 100%, 55%, 0.6),
+                 0 0 40px hsl(200, 100%, 55%, 0.4),
+                 0 0 60px hsl(200, 100%, 55%, 0.2);
+  }
+  
+  .glow-gold {
+    text-shadow: 0 0 20px hsl(42, 90%, 55%, 0.6),
+                 0 0 40px hsl(42, 90%, 55%, 0.4);
+  }
+  
+  /* Wave function collapse animation */
+  @keyframes wave-collapse {
+    0% {
+      filter: blur(8px);
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      filter: blur(0);
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animate-wave-collapse {
+    animation: wave-collapse 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  
+  /* Quantum interference pattern */
+  @keyframes interference {
+    0%, 100% {
+      opacity: 0.3;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.6;
+      transform: scale(1.02);
+    }
+  }
+  
+  .animate-interference {
+    animation: interference 3s ease-in-out infinite;
+  }
+  
+  /* Renormalization hover effect */
+  .renormalize {
+    @apply transition-all duration-300;
+  }
+  
+  .renormalize:hover {
+    @apply text-primary scale-105;
+    text-shadow: 0 0 10px hsl(200, 100%, 55%, 0.5);
+  }
+  
+  /* Lattice grid pattern */
+  .lattice-bg {
+    background-image: 
+      linear-gradient(to right, hsl(0, 0%, 15%, 0.1) 1px, transparent 1px),
+      linear-gradient(to bottom, hsl(0, 0%, 15%, 0.1) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+  
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: hsl(0, 0%, 5%);
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: hsl(200, 100%, 55%, 0.3);
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(200, 100%, 55%, 0.5);
+  }
+  
+  /* Section styling */
+  .section-title {
+    @apply font-editorial text-4xl md:text-6xl lg:text-7xl tracking-tight;
+  }
+  
+  .section-subtitle {
+    @apply font-mono text-sm uppercase tracking-[0.3em] text-muted-foreground;
+  }
+  
+  /* Academic paper styling */
+  .paper-text {
+    @apply font-light leading-relaxed text-foreground/80;
   }
 }
